@@ -1,0 +1,31 @@
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+function App() {
+  const [color, setColor] = useState("");
+
+  const onChangeHandler = (event) => {
+    setColor(event.target.value);
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Color :"
+        value={color}
+        onChange={onChangeHandler}
+      />
+      <div
+        style={{ height: "300px", width: "300px", backgroundColor: color }}
+      ></div>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <div>
+    <App />
+  </div>,
+  document.getElementById("root")
+);
